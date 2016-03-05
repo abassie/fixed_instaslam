@@ -1,0 +1,6 @@
+framework module Pods_InstaSlam {
+  umbrella header "Pods-InstaSlam-umbrella.h"
+
+  export *
+  module * { export * }
+}
