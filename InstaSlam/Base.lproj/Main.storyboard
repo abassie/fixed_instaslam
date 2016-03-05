@@ -76,6 +76,14 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="hen-M6-3g6"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svd-yF-M74">
+                                <rect key="frame" x="107" y="183" width="145" height="30"/>
+                                <state key="normal" title="Take or upload photo"/>
+                                <connections>
+                                    <action selector="toNewPhotoViewController:" destination="OYz-uF-a3z" eventType="touchUpInside" id="QG0-Yl-obu"/>
+                                    <segue destination="vdR-1u-1a6" kind="show" identifier="toNewPhoto" id="OMp-Kz-t9P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -84,6 +92,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scW-0B-iK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="695" y="313"/>
+        </scene>
+        <!--New Photo View Controller-->
+        <scene sceneID="A8r-GM-sGf">
+            <objects>
+                <viewController storyboardIdentifier="NewPhotoViewController" id="vdR-1u-1a6" customClass="NewPhotoViewController" customModule="InstaSlam" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tdz-vf-QH0"/>
+                        <viewControllerLayoutGuide type="bottom" id="gf7-xw-yIs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PXo-jW-4Q0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C1S-pU-kDg">
+                                <rect key="frame" x="40" y="41" width="240" height="194"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dio-hD-PRt">
+                                <rect key="frame" x="40" y="41" width="240" height="194"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="openPhotos:" destination="vdR-1u-1a6" eventType="touchUpInside" id="fS1-Wx-adf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="capturePhoto" destination="C1S-pU-kDg" id="1KH-Wp-6ah"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Upn-Ec-sNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1097" y="313"/>
         </scene>
     </scenes>
 </document>
