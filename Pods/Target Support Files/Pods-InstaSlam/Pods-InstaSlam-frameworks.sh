@@ -84,10 +84,12 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-InstaSlam/AFNetworking.framework"
   install_framework "Pods-InstaSlam/Bolts.framework"
   install_framework "Pods-InstaSlam/Parse.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-InstaSlam/AFNetworking.framework"
   install_framework "Pods-InstaSlam/Bolts.framework"
   install_framework "Pods-InstaSlam/Parse.framework"
 fi

@@ -11,6 +11,8 @@ import Parse
 
 class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    var pictureTaken: UIImage!
+    
     @IBOutlet weak var capturePhoto: UIImageView!
     
     @IBOutlet weak var captionField: UITextField!
@@ -28,6 +30,7 @@ class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.capturePhoto.image = self.pictureTaken
         
 
         
@@ -38,10 +41,11 @@ class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         // Do any additional setup after loading the view.
     
     @IBAction func openPhotos(sender: AnyObject) {
+        photoSelector.delegate = self
         photoSelector.allowsEditing = false
-        photoSelector.sourceType = .PhotoLibrary
+        photoSelector.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         
-        presentViewController(photoSelector, animated: true, completion: nil)
+        self.presentViewController(photoSelector, animated: true, completion: nil)
     }
     
     
@@ -51,7 +55,7 @@ class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         didFinishPickingMediaWithInfo info: [String : AnyObject]) {
             // Get the image captured by the UIImagePickerController
             let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-            capturePhoto.contentMode = .ScaleAspectFill
+            
             
             capturePhoto.image = originalImage
             dismissViewControllerAnimated(true, completion: nil)
@@ -67,15 +71,14 @@ class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     @IBAction func onPost(sender: AnyObject) {
-        let resizedPhoto = correctImageSize(capturePhoto.image!, newSize: CGSize(width: 320, height: 320))
-        Post.postUserImage(resizedPhoto, withCaption: captionField.text) { (success: Bool, error: NSError?) -> Void in
-            if success {
-                print("post successful")
-                self.performSegueWithIdentifier("PostDoneGoHome", sender: nil)
-            }
-            else{
-                print("Post failed")
-            }
+        let resizedPicture = self.correctImageSize(capturePhoto.image!, newSize: CGSize(width: 320, height: 320))
+        
+        Post.postUserImage(resizedPicture, withCaption: captionField.text) { (success: Bool, error: NSError?) -> Void in
+            self.captionField.text = nil
+            self.capturePhoto.image = nil
+            
+            
+            
         }
         
     }

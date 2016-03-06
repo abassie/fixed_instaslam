@@ -36,5 +36,17 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>secure-brushlands-43732.herokuapp.com</key>
+			<string>secure-brushlands-43732.herokuapp.com</string>
+			<key>NSExceptionAllowsInsecureHTTPLoads</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

@@ -68,26 +68,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svd-yF-M74">
+                                <rect key="frame" x="123" y="17" width="93" height="30"/>
+                                <state key="normal" title="Upload photo"/>
+                                <connections>
+                                    <action selector="toNewPhotoViewController:" destination="OYz-uF-a3z" eventType="touchUpInside" id="QG0-Yl-obu"/>
+                                    <segue destination="vdR-1u-1a6" kind="show" identifier="toNewPhoto" id="OMp-Kz-t9P"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="201" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TvX-zO-64t">
+                                <rect key="frame" x="0.0" y="55" width="320" height="513"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InstaCell" rowHeight="201" id="Ovf-F6-ghx" customClass="InstaCell" customModule="InstaSlam" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="201"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ovf-F6-ghx" id="Ir1-dj-1B1">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4b-US-Ywo">
+                                                    <rect key="frame" x="80" y="0.0" width="160" height="128"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aY-Z9-ID6">
+                                                    <rect key="frame" x="8" y="136" width="304" height="56"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="caption" destination="2aY-Z9-ID6" id="gbU-oi-PDY"/>
+                                            <outlet property="photoView" destination="B4b-US-Ywo" id="xZT-81-Dft"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UK5-Cu-4Ov">
-                                <rect key="frame" x="253" y="28" width="48" height="30"/>
+                                <rect key="frame" x="252" y="17" width="48" height="30"/>
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="onLogout:" destination="OYz-uF-a3z" eventType="touchUpInside" id="Lmo-wc-lse"/>
                                     <segue destination="BYZ-38-t0r" kind="show" id="hen-M6-3g6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="svd-yF-M74">
-                                <rect key="frame" x="107" y="183" width="145" height="30"/>
-                                <state key="normal" title="Take or upload photo"/>
-                                <connections>
-                                    <action selector="toNewPhotoViewController:" destination="OYz-uF-a3z" eventType="touchUpInside" id="QG0-Yl-obu"/>
-                                    <segue destination="vdR-1u-1a6" kind="show" identifier="toNewPhoto" id="OMp-Kz-t9P"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="tableView" destination="TvX-zO-64t" id="0gd-Pp-Za1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="scW-0B-iK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -144,7 +176,6 @@
                     <connections>
                         <outlet property="captionField" destination="t2T-mE-CyG" id="MDA-5w-y5E"/>
                         <outlet property="capturePhoto" destination="C1S-pU-kDg" id="1KH-Wp-6ah"/>
-                        <segue destination="OYz-uF-a3z" kind="show" identifier="PostDoneGoHome" id="jml-eZ-ehr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Upn-Ec-sNX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -152,7 +183,4 @@
             <point key="canvasLocation" x="1097" y="313"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="jml-eZ-ehr"/>
-    </inferredMetricsTieBreakers>
 </document>

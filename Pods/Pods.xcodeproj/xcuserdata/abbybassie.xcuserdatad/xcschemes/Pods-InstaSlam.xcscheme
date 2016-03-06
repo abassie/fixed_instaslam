@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '89B4D2C767553AE0DC813672'
+               BlueprintIdentifier = 'B5A911036B3C563A9287C95F'
                BlueprintName = 'Pods-InstaSlam'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_InstaSlam.framework'>
