@@ -13,6 +13,7 @@ class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     
     @IBOutlet weak var capturePhoto: UIImageView!
     
+    @IBOutlet weak var captionField: UITextField!
   
     let photoSelector = UIImagePickerController()
     
@@ -44,6 +45,8 @@ class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     
+
+    
     func imagePickerController(picker: UIImagePickerController,
         didFinishPickingMediaWithInfo info: [String : AnyObject]) {
             // Get the image captured by the UIImagePickerController
@@ -53,6 +56,30 @@ class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
             capturePhoto.image = originalImage
             dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    func correctImageSize(image: UIImage, newSize: CGSize) -> UIImage {
+        let correctImageSize = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
+        correctImageSize.contentMode = UIViewContentMode.ScaleAspectFill
+        UIGraphicsBeginImageContext(correctImageSize.frame.size)
+        correctImageSize.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let resizedPhoto = UIGraphicsGetImageFromCurrentImageContext()
+        return resizedPhoto
+    }
+    
+    @IBAction func onPost(sender: AnyObject) {
+        let resizedPhoto = correctImageSize(capturePhoto.image!, newSize: CGSize(width: 320, height: 320))
+        Post.postUserImage(resizedPhoto, withCaption: captionField.text) { (success: Bool, error: NSError?) -> Void in
+            if success {
+                print("post successful")
+                self.performSegueWithIdentifier("PostDoneGoHome", sender: nil)
+            }
+            else{
+                print("Post failed")
+            }
+        }
+        
+    }
+    
     
 
     override func didReceiveMemoryWarning() {

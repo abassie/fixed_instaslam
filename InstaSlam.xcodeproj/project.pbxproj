@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A48E9CDD1C8AB2740008F146 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48E9CDC1C8AB2740008F146 /* HomeViewController.swift */; };
 		A48E9CE01C8B43AE0008F146 /* NewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48E9CDF1C8B43AE0008F146 /* NewPhotoViewController.swift */; };
+		A48E9CE21C8BCEFB0008F146 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48E9CE11C8BCEFB0008F146 /* Post.swift */; };
 		A4C9857C1C8A863300BD38A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C9857B1C8A863300BD38A3 /* AppDelegate.swift */; };
 		A4C9857E1C8A863300BD38A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C9857D1C8A863300BD38A3 /* ViewController.swift */; };
 		A4C985811C8A863300BD38A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4C9857F1C8A863300BD38A3 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		4C4525222EFB40A422124F67 /* Pods_InstaSlam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InstaSlam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A48E9CDC1C8AB2740008F146 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		A48E9CDF1C8B43AE0008F146 /* NewPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPhotoViewController.swift; sourceTree = "<group>"; };
+		A48E9CE11C8BCEFB0008F146 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A4C985781C8A863300BD38A3 /* InstaSlam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaSlam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C9857B1C8A863300BD38A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4C9857D1C8A863300BD38A3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,6 +59,14 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		A48E9CE31C8BCF040008F146 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A48E9CE11C8BCEFB0008F146 /* Post.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		A4C9856F1C8A863300BD38A3 = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +88,7 @@
 		A4C9857A1C8A863300BD38A3 /* InstaSlam */ = {
 			isa = PBXGroup;
 			children = (
+				A48E9CE31C8BCF040008F146 /* Models */,
 				A48E9CDE1C8B438C0008F146 /* View Controllers */,
 				A4C9857B1C8A863300BD38A3 /* AppDelegate.swift */,
 				A4C9857F1C8A863300BD38A3 /* Main.storyboard */,
@@ -231,6 +242,7 @@
 				A4C9858E1C8A8AAA00BD38A3 /* LoginViewController.swift in Sources */,
 				A4C9857E1C8A863300BD38A3 /* ViewController.swift in Sources */,
 				A4C9857C1C8A863300BD38A3 /* AppDelegate.swift in Sources */,
+				A48E9CE21C8BCEFB0008F146 /* Post.swift in Sources */,
 				A48E9CE01C8B43AE0008F146 /* NewPhotoViewController.swift in Sources */,
 				A48E9CDD1C8AB2740008F146 /* HomeViewController.swift in Sources */,
 			);
