@@ -78,9 +78,11 @@ class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
             self.capturePhoto.image = nil
             
             
-            
-        }
-        
+                  }
+        self.dismissViewControllerAnimated(true, completion: {
+           NSNotificationCenter.defaultCenter().postNotificationName("reload", object: nil)
+        })
+
     }
     
     

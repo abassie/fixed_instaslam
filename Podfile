@@ -6,6 +6,7 @@
 target 'InstaSlam' do
 pod 'Parse'
 pod 'AFNetworking', '~> 2.6'
+pod 'ParseUI'
 
 end
 

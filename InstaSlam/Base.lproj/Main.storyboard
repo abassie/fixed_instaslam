@@ -87,7 +87,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4b-US-Ywo">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B4b-US-Ywo" customClass="PFImageView">
                                                     <rect key="frame" x="80" y="0.0" width="160" height="128"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2aY-Z9-ID6">
@@ -99,8 +99,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="caption" destination="2aY-Z9-ID6" id="gbU-oi-PDY"/>
-                                            <outlet property="photoView" destination="B4b-US-Ywo" id="xZT-81-Dft"/>
+                                            <outlet property="caption" destination="2aY-Z9-ID6" id="s6j-1f-E0l"/>
+                                            <outlet property="photoView" destination="B4b-US-Ywo" id="MJP-28-1uZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

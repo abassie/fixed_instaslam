@@ -87,9 +87,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-InstaSlam/AFNetworking.framework"
   install_framework "Pods-InstaSlam/Bolts.framework"
   install_framework "Pods-InstaSlam/Parse.framework"
+  install_framework "Pods-InstaSlam/ParseUI.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-InstaSlam/AFNetworking.framework"
   install_framework "Pods-InstaSlam/Bolts.framework"
   install_framework "Pods-InstaSlam/Parse.framework"
+  install_framework "Pods-InstaSlam/ParseUI.framework"
 fi

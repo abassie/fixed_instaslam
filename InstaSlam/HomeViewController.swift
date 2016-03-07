@@ -24,8 +24,23 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         //tableView.delegate = self
         refreshData()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadTableData:", name: "reload", object: nil)
     }
-                
+    
+    func reloadTableData(notification: NSNotification) {
+        self.tableView.reloadData()
+    }
+        
+        
+        
+    
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated);
+        refreshData()
+        self.tableView.reloadData()
+    }
+    
                 
     func refreshData() {
         // construct PFQuery
@@ -81,8 +96,10 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         // Pass the selected object to the new view controller.
     }
     */
+
     @IBAction func toNewPhotoViewController(sender: AnyObject) {
         self.performSegueWithIdentifier("toNewPhoto", sender: self)
+        }
     }
 
-}
+
