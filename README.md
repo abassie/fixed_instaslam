@@ -1,6 +1,6 @@
-# Project 6 - *InstaSlamm*
+# Project 6 - *InstaSlam*
 
-**InstaSlamm** is a photo sharing app using Parse as its backend.
+**InstaSlam** is a photo sharing app using Parse as its backend.
 
 Time spent: **X** hours spent in total
 
@@ -8,11 +8,11 @@ Time spent: **X** hours spent in total
 
 The following **required** functionality is completed:
 
-- [ ] User can sign up to create a new account using Parse authentication
-- [ ] User can log in and log out of his or her account
-- [ ] The current signed in user is persisted across app restarts
-- [ ] User can take a photo, add a caption, and post it to "Instagram"
-- [ ] User can view the last 20 posts submitted to "Instagram"
+- [x] User can sign up to create a new account using Parse authentication
+- [x] User can log in and log out of his or her account
+- [x] The current signed in user is persisted across app restarts
+- [x] User can take a photo, add a caption, and post it to "Instagram"
+- [x] User can view the last 20 posts submitted to "Instagram"
 
 The following **optional** features are implemented:
 
@@ -25,7 +25,10 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+- [x] List anything else that you can get done to improve the app functionality!
+- [x] nice GIF for opening screen to enhance user experience
+- [x] added autolayout constraints to fit multiple phone sizes
+- [x] app icon added
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
@@ -36,14 +39,15 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/Y4Ub27t.gif?1' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
-## Notes
+## This app was challenging and fun. I spent around 6 hours trying to figure out how to load images. Once I completed that step,
+I helped classmates get their apps working and had fun enhancing the user experience!
 
 Describe any challenges encountered while building the app.
-
+Adding the photos to the home timeline was very difficult for me. I had to play around with resizing images a lot.
 ## License
 
     Copyright [yyyy] [name of copyright owner]
