@@ -20,6 +20,15 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //code for adding GIF
+        let imageData = NSData(contentsOfURL: NSBundle.mainBundle().URLForResource("giphy", withExtension: "gif")!)
+        let imageGif = UIImage.gifWithData(imageData!)
+        let imageView = UIImageView(image: imageGif)
+        imageView.frame = CGRect(x: 0.0, y:0.0, width:375.0, height: 700.0)
+        view.addSubview(imageView)
+        view.sendSubviewToBack(imageView)
+
 
         // Do any additional setup after loading the view.
     }
