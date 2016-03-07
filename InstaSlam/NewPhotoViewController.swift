@@ -61,17 +61,20 @@ class NewPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
             dismissViewControllerAnimated(true, completion: nil)
     }
     
-    func correctImageSize(image: UIImage, newSize: CGSize) -> UIImage {
-        let correctImageSize = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
-        correctImageSize.contentMode = UIViewContentMode.ScaleAspectFill
-        UIGraphicsBeginImageContext(correctImageSize.frame.size)
-        correctImageSize.layer.renderInContext(UIGraphicsGetCurrentContext()!)
-        let resizedPhoto = UIGraphicsGetImageFromCurrentImageContext()
-        return resizedPhoto
+    func resize(image: UIImage, newSize: CGSize) -> UIImage{
+        let resizeImageView = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
+        resizeImageView.contentMode = .ScaleAspectFill
+        resizeImageView.image = image
+        
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
     }
     
     @IBAction func onPost(sender: AnyObject) {
-        let resizedPicture = self.correctImageSize(capturePhoto.image!, newSize: CGSize(width: 320, height: 320))
+        let resizedPicture = self.resize(capturePhoto.image!, newSize: CGSize(width:300, height: 300))
         
         Post.postUserImage(resizedPicture, withCaption: captionField.text) { (success: Bool, error: NSError?) -> Void in
             self.captionField.text = nil

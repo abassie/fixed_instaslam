@@ -48,7 +48,7 @@ class Post: NSObject {
         if let image = image {
             // get image data and check if that is not nil
             if let imageData = UIImagePNGRepresentation(image) {
-                return PFFile(name: "image.png", data: imageData)
+                return PFFile(data: imageData)
             }
         }
         return nil

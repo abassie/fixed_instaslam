@@ -9,12 +9,13 @@
 import UIKit
 import Parse
 import AFNetworking
+import ParseUI
 
 
 class InstaCell: UITableViewCell {
 
 
-    @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var photoView: PFImageView!
     
     @IBOutlet weak var caption: UILabel!
     
@@ -25,7 +26,9 @@ class InstaCell: UITableViewCell {
             if let userPicture = /*PFUser.currentUser()?*/post["media"] as? PFFile {
                 userPicture.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
                     if (error == nil) {
-                        self.photoView.image = UIImage(data:imageData!)
+                        
+                        self.photoView.file = self.post["media"] as? PFFile
+                        self.photoView.loadInBackground()
                     }
                 }
             }
